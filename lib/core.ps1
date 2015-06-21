@@ -35,6 +35,8 @@ foreach($key in $map.keys) {
 function wraptext($text, $width) {
 	if(!$width) { $width = $host.ui.rawui.windowsize.width };
 	$width -= 1 # be conservative: doesn't seem to print the last char
+	
+	[array]$Lines = @()
 
 	$text -split '\r?\n' | % {
 		$line = ''
